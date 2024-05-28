@@ -2,6 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
@@ -87,6 +89,7 @@ button {
 .modal-wrapper.open {
   opacity: 1;
   visibility: visible;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .modal-wrapper {
@@ -96,4 +99,16 @@ button {
   place-content: center;
   opacity: 0;
   visibility: hidden;
+}
+
+#thank-you {
+  text-align: center;
+  background-color: var(--neutral-dark-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 2.4rem;
+  margin: 1.6rem;
+  border-radius: 1.6rem;
+  box-sizing: border-box;
 }

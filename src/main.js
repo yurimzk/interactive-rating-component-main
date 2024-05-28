@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const rateFour = document.querySelector('.rate-four');
   const rateFive = document.querySelector('.rate-five');
 
+  const btnSubmit = document.getElementById('submit');
+  const appPage = document.getElementById('app');
+  const thankYouPage = document.getElementById('thank-you');
+
   function toggleRateOne() {
     rateOne.addEventListener('click', () => {
       rateOne.classList.toggle('active-rate');
@@ -55,9 +59,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  function submitRate() {
+    btnSubmit.addEventListener('click', () => {
+      appPage.classList.add('modal-wrapper');
+      thankYouPage.classList.add('open');
+    });
+  }
+
   toggleRateOne();
   toggleRateTwo();
   toggleRateThree();
   toggleRateFour();
   toggleRateFive();
+  submitRate();
 });

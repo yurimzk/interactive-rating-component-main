@@ -23,6 +23,7 @@ body {
   height: 100vh;
   display: grid;
   place-content: center;
+  position: relative;
 }
 
 #app {
@@ -81,4 +82,18 @@ button {
 .active-rate {
   background-color: var(--primary-orange);
   color: var(--neutal-white);
+}
+
+.modal-wrapper.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-wrapper {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  opacity: 0;
+  visibility: hidden;
 }

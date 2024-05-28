@@ -77,3 +77,8 @@ button {
   background-color: var(--neutal-white);
   transition: 0.3s
 }
+
+.active-rate {
+  background-color: var(--primary-orange);
+  color: var(--neutal-white);
+}

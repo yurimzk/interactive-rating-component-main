@@ -71,3 +71,9 @@ button {
   padding: 1.6rem;
   border-radius: 2.4rem;
 }
+
+.rate:hover , button:hover {
+  cursor: pointer;
+  background-color: var(--neutal-white);
+  transition: 0.3s
+}

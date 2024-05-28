@@ -9,67 +9,41 @@ document.addEventListener('DOMContentLoaded', function() {
   const appPage = document.getElementById('app');
   const thankYouPage = document.getElementById('thank-you');
 
-  function toggleRateOne() {
-    rateOne.addEventListener('click', () => {
-      rateOne.classList.toggle('active-rate');
-      rateTwo.classList.remove('active-rate');
-      rateThree.classList.remove('active-rate');
-      rateFour.classList.remove('active-rate');
-      rateFive.classList.remove('active-rate');
-    });
-  }
+  const rating = document.querySelector('.final-rating');
 
-  function toggleRateTwo() {
-    rateTwo.addEventListener('click', () => {
-      rateTwo.classList.toggle('active-rate');
-      rateOne.classList.remove('active-rate');
-      rateThree.classList.remove('active-rate');
-      rateFour.classList.remove('active-rate');
-      rateFive.classList.remove('active-rate');
-    });
-  }
+  function toggleRate(rateElement) {
+    rateElement.addEventListener('click', () => {
+        const ratingValue = parseInt(rateElement.textContent); // Alteração aqui
+        const activeRate = document.querySelector('.active-rate');
 
-  function toggleRateThree() {
-    rateThree.addEventListener('click', () => {
-      rateThree.classList.toggle('active-rate');
-      rateOne.classList.remove('active-rate');
-      rateTwo.classList.remove('active-rate');
-      rateFour.classList.remove('active-rate');
-      rateFive.classList.remove('active-rate');
+        if (activeRate === rateElement) {
+          rateElement.classList.remove('active-rate');
+          rating.textContent = "Please select a rating";
+        } else {
+          rateElement.classList.add('active-rate');
+          rating.textContent = `You selected ${ratingValue} out of 5`;
+        if (activeRate) {
+          activeRate.classList.remove('active-rate');
+          }
+        }
     });
-  }
-
-  function toggleRateFour() {
-    rateFour.addEventListener('click', () => {
-      rateFour.classList.toggle('active-rate');
-      rateOne.classList.remove('active-rate');
-      rateTwo.classList.remove('active-rate');
-      rateThree.classList.remove('active-rate');
-      rateFive.classList.remove('active-rate');
-    });
-  }
-
-  function toggleRateFive() {
-    rateFive.addEventListener('click', () => {
-      rateFive.classList.toggle('active-rate');
-      rateOne.classList.remove('active-rate');
-      rateTwo.classList.remove('active-rate');
-      rateThree.classList.remove('active-rate');
-      rateFour.classList.remove('active-rate');
-    });
-  }
+}
 
   function submitRate() {
-    btnSubmit.addEventListener('click', () => {
-      appPage.classList.add('modal-wrapper');
-      thankYouPage.classList.add('open');
-    });
+      btnSubmit.addEventListener('click', () => {
+          appPage.classList.add('modal-wrapper');
+          thankYouPage.classList.add('open');
+      });
   }
 
-  toggleRateOne();
-  toggleRateTwo();
-  toggleRateThree();
-  toggleRateFour();
-  toggleRateFive();
+  function initializeRatings() {
+      toggleRate(rateOne);
+      toggleRate(rateTwo);
+      toggleRate(rateThree);
+      toggleRate(rateFour);
+      toggleRate(rateFive);
+  }
+
+  initializeRatings();
   submitRate();
 });

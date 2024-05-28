@@ -112,3 +112,16 @@ button {
   border-radius: 1.6rem;
   box-sizing: border-box;
 }
+
+.final-rating-bg {
+  background-color: var(--neutral-darker-grey);
+  align-self: center;
+  justify-self: center;
+  padding: .4rem 1.8rem;
+  border-radius: 2.4rem;
+}
+
+.final-rating {
+  color: var(--primary-orange);
+  margin-top: .4rem;
+}

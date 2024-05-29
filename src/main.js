@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function toggleRate(rateElement) {
     rateElement.addEventListener('click', () => {
-        const ratingValue = parseInt(rateElement.textContent); // Alteração aqui
+        const ratingValue = parseInt(rateElement.textContent);
         const activeRate = document.querySelector('.active-rate');
 
         if (activeRate === rateElement) {

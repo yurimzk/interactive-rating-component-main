@@ -125,3 +125,15 @@ button {
   color: var(--primary-orange);
   margin-top: .4rem;
 }
+
+@media (min-width: 1440px) {
+  #app {
+    margin: 52.6rem;
+  }
+
+  .icon-bg {
+    width: 50px;
+    height: 50px;
+    padding: 1.6rem;
+  }
+}

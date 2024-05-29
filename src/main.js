@@ -30,11 +30,17 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
   function submitRate() {
-      btnSubmit.addEventListener('click', () => {
-          appPage.classList.add('modal-wrapper');
-          thankYouPage.classList.add('open');
-      });
+    btnSubmit.addEventListener('click', () => {
+        const activeRate = document.querySelector('.active-rate');
+        if (activeRate) {
+            appPage.classList.add('modal-wrapper');
+            thankYouPage.classList.add('open');
+        } else {
+            alert("You need to choose a rate!");
+        }
+    });
   }
+
 
   function initializeRatings() {
       toggleRate(rateOne);
